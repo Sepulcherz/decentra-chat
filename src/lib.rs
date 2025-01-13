@@ -16,6 +16,8 @@ struct Profile {
     posts: Vec<Post>,
     following: Vec<String>,
     followers: Vec<String>,
+    github_username: Option<String>,
+    github_repos: Option<Vec<String>>,
 }
 
 #[derive(Serialize, Deserialize, Clone)] // Added Clone here
@@ -45,6 +47,16 @@ impl DecentraChat {
             profiles: Vec::new(),
             posts: Vec::new(),
         }
+    }
+    pub async fn connect_github(&mut self, github_username: String) -> Result<(), JsValue> {
+    // TODO: Implement GitHub connection
+    // Requirements:
+    // 1. Validate GitHub username
+    // 2. Fetch public repositories
+    // 3. Store GitHub data in profile
+    // 4. Add error handling
+    // Bounty Value: 0.1 ETH
+    Err(JsValue::from_str("Not implemented"))
     }
 
     pub async fn connect_wallet(&mut self) -> Result<JsValue, JsValue> {
